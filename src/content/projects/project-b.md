@@ -1,9 +1,8 @@
 ---
-name: 'Project B'
-description: 'This is an example project description! You should replace this with a description of your own project.'
-tags: ['Framework A', 'Library B', 'Tool C', 'Resource D']
-image: '../../../public/static/1200x630.png'
-link: 'https://example.com'
-startDate: '2024-02-01'
-endDate: '2024-03-01'
+name: 'LCC'
+description: '链接你的一切，简单易记的数字名片'
+tags: ['数字名片', '实验项目',]
+image: '../../../public/other/lcc-cc.png'
+link: 'https://lcc.cc'
+startDate: '2020-02-01'
 ---
