@@ -3,32 +3,39 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
-
 ---
+
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="Now" />
   <Breadcrumbs items={[{ label: 'Now', icon: 'lucide:activity' }]} />
 
-  <section class="flex justify-center px-4 py-8">
+  <section class="flex justify-center px-4 py-10">
     <div
-      class="w-full max-w-xl bg-white/60 backdrop-blur-xl rounded-3xl shadow-xl p-6 transition-transform hover:scale-[1.015]"
-    >
+      class="w-full max-w-xl rounded-[32px] backdrop-blur-2xl 
+             bg-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.08)]
+             ring-1 ring-white/30 p-8 transition-all 
+             hover:shadow-[0_12px_45px_rgba(0,0,0,0.12)] 
+             hover:scale-[1.012]">
 
       <!-- Header -->
-      <div class="flex gap-4 items-start mb-6">
-        <div class="p-[3px] rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 via-blue-500 via-purple-500 to-pink-500">
+      <div class="flex gap-4 items-start mb-10">
+        <div class="p-[3px] rounded-full bg-gradient-to-br 
+                    from-white/70 via-white/30 to-white/5 backdrop-blur-xl 
+                    shadow-inner">
           <img
             src="https://icons.xuzh.com/ldd/avatar-ai.jpg"
-            alt="avatar"
-            class="w-24 h-24 rounded-full"
+            class="w-24 h-24 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)]"
           />
         </div>
 
         <div class="flex flex-col">
-          <h1 class="text-2xl font-semibold text-gray-800">卢东东</h1>
+          <h1 class="text-3xl font-semibold text-gray-900 tracking-tight">
+            卢东东
+          </h1>
 
+          <!-- Location -->
           <div class="flex items-center text-gray-600 text-sm mt-1">
-            <svg class="w-4 h-4 mr-1 opacity-80" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 mr-1 opacity-70" viewBox="0 0 24 24">
               <path
                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
               />
@@ -36,83 +43,110 @@ import Layout from '@/layouts/Layout.astro'
             中山市，中国
           </div>
 
-          <div class="flex flex-wrap gap-2 mt-2">
-            <span class="badge badge-info badge-lg">INTJ</span>
-            <span class="badge badge-info badge-lg">数字难民</span>
-            <span class="badge badge-info badge-lg">自由职业</span>
+          <!-- Badges -->
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="px-3 py-1 rounded-full text-sm text-gray-700 bg-white/60 backdrop-blur-md shadow-sm">
+              INTJ
+            </span>
+            <span class="px-3 py-1 rounded-full text-sm text-gray-700 bg-white/60 backdrop-blur-md shadow-sm">
+              数字难民
+            </span>
+            <span class="px-3 py-1 rounded-full text-sm text-gray-700 bg-white/60 backdrop-blur-md shadow-sm">
+              自由职业
+            </span>
           </div>
         </div>
       </div>
 
       <!-- NOW block -->
       <div
-        class="bg-pink-50 border border-pink-200 rounded-xl p-5 shadow-inner animate-pulse-slow"
-      >
-        <h2 class="text-pink-600 font-bold mb-2 flex items-center gap-1">
-          ⏳ @Link
+        class="p-6 rounded-2xl bg-gradient-to-br 
+               from-pink-50/70 to-rose-100/40
+               border border-white/40 backdrop-blur-xl
+               shadow-[inset_0_0_15px_rgba(255,255,255,0.3)]
+               animate-[pulse_5s_ease-in-out_infinite]">
+
+        <h2 class="text-pink-600 font-semibold mb-2 text-lg">
+          ⏳ 我正在做什么
         </h2>
 
-        <p class="text-pink-700 text-[15px] leading-relaxed">
+        <p class="text-pink-700 leading-relaxed">
           江湖夜雨十年灯，我正在做的事，就在这里。
         </p>
 
         <a
           href="https://link.ldd.cc"
           target="_blank"
-          class="inline-block mt-3 px-4 py-2 rounded-full text-white bg-gradient-to-r from-purple-600 to-pink-500 shadow-lg hover:shadow-xl hover:scale-105 transition"
-        >
+          class="inline-block mt-4 px-5 py-2.5 rounded-full text-white text-sm
+                 bg-gradient-to-r from-pink-500 to-purple-500 
+                 shadow-[0_4px_14px_rgba(0,0,0,0.15)]
+                 hover:shadow-[0_6px_20px_rgba(0,0,0,0.20)]
+                 hover:scale-[1.05] transition-all">
           🌙 打开我的说明书
         </a>
       </div>
 
-      <!-- 亮点 -->
-      <div class="mt-8">
-        <h2 class="text-lg font-semibold flex items-center gap-2">✨ 亮点</h2>
+      <!-- Highlights -->
+      <div class="mt-10">
+        <h2 class="text-lg font-semibold flex items-center gap-2 text-gray-900">
+          ✨ 亮点
+        </h2>
 
-        <ul class="list-disc list-inside text-gray-700 leading-relaxed mt-2">
-          <li>曾在深夜灵感爆棚，把需求文档写成武侠小说；</li>
-          <li>为选按钮圆角，Figma 画了五百张图；</li>
-          <li>拒绝内卷，用 Markdown 写完离职报告；</li>
-          <li>被 ChatGPT 评为“最花式、最穷困潦倒用户”；</li>
-          <li>运营一个没有用户的产品，用户画像非常稳定。</li>
+        <ul class="text-gray-700 mt-3 leading-relaxed space-y-2">
+          <li>深夜把需求文档写成武侠小说；</li>
+          <li>为了选按钮圆角，在 Figma 画了五百个组件；</li>
+          <li>用 Markdown 提交离职报告，自带淡定冷感；</li>
+          <li>被 ChatGPT 评为“最穷困潦倒但最有创意的用户”；</li>
+          <li>运营一个没有用户的产品，用户画像相当稳定。</li>
         </ul>
       </div>
 
-      <!-- 擅长 -->
-      <div class="mt-8">
-        <h2 class="text-lg font-semibold flex items-center gap-1">🧩 擅长</h2>
+      <!-- Skills -->
+      <div class="mt-10">
+        <h2 class="text-lg font-semibold flex items-center gap-2 text-gray-900">
+          🧩 擅长
+        </h2>
 
         <div class="flex flex-wrap gap-2 mt-3">
-          <span class="badge badge-lg bg-blue-100 text-blue-600">熬夜</span>
-          <span class="badge badge-lg bg-blue-100 text-blue-600">拖延</span>
-          <span class="badge badge-lg bg-blue-100 text-blue-600">躺平</span>
-          <span class="badge badge-lg bg-blue-100 text-blue-600">瞎掰</span>
+          <span class="px-3 py-1 rounded-full bg-white/50 backdrop-blur-md text-gray-700 shadow-sm">
+            熬夜
+          </span>
+          <span class="px-3 py-1 rounded-full bg-white/50 backdrop-blur-md text-gray-700 shadow-sm">
+            拖延
+          </span>
+          <span class="px-3 py-1 rounded-full bg-white/50 backdrop-blur-md text-gray-700 shadow-sm">
+            躺平
+          </span>
+          <span class="px-3 py-1 rounded-full bg-white/50 backdrop-blur-md text-gray-700 shadow-sm">
+            瞎掰
+          </span>
         </div>
       </div>
 
-      <!-- 兴趣 -->
-      <div class="mt-8">
-        <h2 class="text-lg font-semibold flex items-center gap-1">🎈 兴趣</h2>
-        <p class="text-gray-700 mt-1">
-          🏍摩托 • 👾打碟 • 🎬记录 • 📝写作 • 🎮游戏 • 🪖EDC
+      <!-- Interests -->
+      <div class="mt-10">
+        <h2 class="text-lg font-semibold flex items-center gap-2 text-gray-900">
+          🎈 兴趣
+        </h2>
+        <p class="text-gray-700 mt-2">
+          🏍 摩托 • 👾 打碟 • 🎬 记录 • 📝 写作 • 🎮 游戏 • 🪖 EDC
         </p>
       </div>
 
-      <!-- QR -->
+      <!-- QR section -->
       <div
-        class="mt-10 p-4 bg-gray-50 rounded-xl flex items-center justify-between"
-      >
+        class="mt-12 p-5 rounded-2xl flex items-center justify-between
+               bg-white/50 backdrop-blur-xl shadow-inner border border-white/40">
         <div>
-          <div class="font-semibold text-base flex items-center gap-2">
+          <div class="font-semibold text-gray-900 text-base">
             📱 扫码查看个人说明书
           </div>
-          <div class="text-gray-500 text-sm mt-1">「偷懒界翘楚的独白情书」</div>
+          <div class="text-gray-500 text-sm mt-1">偷懒界翘楚的独白情书</div>
         </div>
 
-        <!-- 依旧使用网络二维码（你要求保留） -->
         <img
           src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://link.ldd.cc"
-          class="w-20 h-20 rounded-lg shadow"
+          class="w-20 h-20 rounded-xl shadow-md"
         />
       </div>
     </div>

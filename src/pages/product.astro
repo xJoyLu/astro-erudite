@@ -8,56 +8,16 @@ const projects = await getAllProjects()
 
 const products = {
   running: [
-    {
-      title: '序章XUZH',
-      desc: '一人公司',
-      icon: 'https://icons.xuzh.com/xuzh/logo.png',
-      link: 'https://xuzh.com',
-    },
-    {
-      title: '思路社区',
-      desc: '游戏爱好者与数字游民的聚集地',
-      icon: 'https://xuzh.com/assets/img/profile.webp?h=86dcf74a642f5aaf1d466c4789df7ba5',
-      link: 'https://si.lu',
-    },
-    {
-      title: 'LCC',
-      desc: '年轻人的第一个短链接！',
-      icon: 'https://icons.xuzh.com/lcc/logo.png',
-      link: 'https://lcc.cc',
-    },
-    {
-      title: '三义栈',
-      desc: '「3」步解决需求服务，让互联网更「EZ」',
-      icon: 'https://icons.xuzh.com/3ez/favicon.png',
-      link: 'https://3ez.cn',
-    },
-    {
-      title: '无所事事文化交流中心',
-      desc: '线下实体店',
-      icon: 'https://icons.xuzh.com/wusuoshishi/logo-pink.png',
-      link: 'https://wusuoshishi.com',
-    },
+    { title: '序章XUZH', desc: '一人公司', icon: 'https://icons.xuzh.com/xuzh/logo.png', link: 'https://xuzh.com' },
+    { title: '思路社区', desc: '游戏爱好者与数字游民的聚集地', icon: 'https://xuzh.com/assets/img/profile.webp?h=86dcf74a642f5aaf1d466c4789df7ba5', link: 'https://si.lu' },
+    { title: 'LCC', desc: '年轻人的第一个短链接！', icon: 'https://icons.xuzh.com/lcc/logo.png', link: 'https://lcc.cc' },
+    { title: '三义栈', desc: '「3」步解决需求服务，让互联网更「EZ」', icon: 'https://icons.xuzh.com/3ez/favicon.png', link: 'https://3ez.cn' },
+    { title: '无所事事文化交流中心', desc: '线下实体店', icon: 'https://icons.xuzh.com/wusuoshishi/logo-pink.png', link: 'https://wusuoshishi.com' },
   ],
   offline: [
-    {
-      title: '完美小组件',
-      desc: 'iPhone美化APP,老板觉得赚的少，卖掉已下线',
-      icon: 'https://icons.xuzh.com/ldd/huaya.svg',
-      link: '',
-    },
-    {
-      title: '追星',
-      desc: '饭圈应援APP,疫情一来，投资人比粉丝跑得还快',
-      icon: 'https://icons.xuzh.com/ldd/huaya.svg',
-      link: '',
-    },
-    {
-      title: '中国证书人才网',
-      desc: '专注证书人才的招聘平台，认证层层审批，太累了',
-      icon: 'https://icons.xuzh.com/ldd/huaya.svg',
-      link: '',
-    },
+    { title: '完美小组件', desc: 'iPhone美化APP,老板觉得赚的少，卖掉已下线', icon: 'https://icons.xuzh.com/ldd/huaya.svg', link: '' },
+    { title: '追星', desc: '饭圈应援APP,疫情一来，投资人比粉丝跑得还快', icon: 'https://icons.xuzh.com/ldd/huaya.svg', link: '' },
+    { title: '中国证书人才网', desc: '专注证书人才的招聘平台，认证层层审批，太累了', icon: 'https://icons.xuzh.com/ldd/huaya.svg', link: '' },
   ],
   openSource: [
     { link: 'ludongdong' },
@@ -79,9 +39,9 @@ const products = {
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-4 p-4 rounded-2xl bg-white/60 backdrop-blur-md shadow-md hover:bg-white/70 transition transform hover:-translate-y-1"
+          class="flex items-center gap-4 p-5 rounded-3xl bg-gradient-to-br from-white/30 via-white/20 to-white/10 backdrop-blur-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
         >
-          <img src={item.icon} alt={item.title} class="w-12 h-12 rounded-lg shadow-sm" />
+          <img src={item.icon} alt={item.title} class="w-14 h-14 rounded-xl shadow-md" />
           <div>
             <h3 class="font-bold text-lg">{item.title}</h3>
             <p class="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
@@ -96,16 +56,15 @@ const products = {
     <h2 class="text-xl font-semibold mb-4">❌ 已下线</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {products.offline.map(item => (
-        <a
-          href={item.link || '#'}
-          class="flex items-center gap-4 p-4 rounded-2xl bg-white/40 backdrop-blur-md shadow-md opacity-60 cursor-not-allowed"
+        <div
+          class="flex items-center gap-4 p-5 rounded-3xl bg-white/20 backdrop-blur-xl shadow-md opacity-50 cursor-not-allowed"
         >
-          <img src={item.icon} alt={item.title} class="w-12 h-12 rounded-lg shadow-sm" />
+          <img src={item.icon} alt={item.title} class="w-14 h-14 rounded-xl shadow-sm" />
           <div>
             <h3 class="font-bold text-lg">{item.title}</h3>
-            <p class="text-gray-500 text-sm">{item.desc}</p>
+            <p class="text-gray-400 text-sm">{item.desc}</p>
           </div>
-        </a>
+        </div>
       ))}
     </div>
   </section>
@@ -118,11 +77,11 @@ const products = {
         <a
           href={`https://github.com/xjoylu/${item.link}`}
           target="_blank"
-          class="p-2 rounded-lg bg-white/60 backdrop-blur-md shadow-sm hover:scale-105 transition"
+          class="p-2 rounded-xl bg-gradient-to-br from-white/30 via-white/20 to-white/10 backdrop-blur-xl shadow-md hover:shadow-xl hover:scale-105 transition transform"
         >
           <img
             src={`https://github-readme-stats.vercel.app/api/pin/?username=xjoylu&repo=${item.link}`}
-            class="rounded-lg"
+            class="rounded-xl"
           />
         </a>
       ))}
@@ -133,11 +92,11 @@ const products = {
   <section>
     <h2 class="text-xl font-semibold mb-4">📌 网站地图</h2>
     <div class="flex flex-wrap gap-4">
-      <a href="/authors" class="btn glass flex-1 min-w-[120px] justify-center">👤 作者</a>
-      <a href="/tags" class="btn glass flex-1 min-w-[120px] justify-center">🏷️ 标签</a>
-      <a href="https://status.ldd.cc/" class="btn glass flex-1 min-w-[120px] justify-center">☁️ 云服务监控看板</a>
-      <a href="https://echo.ldd.cc/" class="btn glass flex-1 min-w-[120px] justify-center">🎬 读书&观影纪录</a>
-      <a href="https://link.ldd.cc/" class="btn glass flex-1 min-w-[120px] justify-center">🌙 个人说明书</a>
+      <a href="/authors" class="btn glass flex-1 min-w-[120px] justify-center hover:scale-105 transition">👤 作者</a>
+      <a href="/tags" class="btn glass flex-1 min-w-[120px] justify-center hover:scale-105 transition">🏷️ 标签</a>
+      <a href="https://status.ldd.cc/" class="btn glass flex-1 min-w-[120px] justify-center hover:scale-105 transition">☁️ 云监控看板</a>
+      <a href="https://echo.ldd.cc/" class="btn glass flex-1 min-w-[120px] justify-center hover:scale-105 transition">🎬 读书&观影纪录</a>
+      <a href="https://link.ldd.cc/" class="btn glass flex-1 min-w-[120px] justify-center hover:scale-105 transition">🌙 个人说明书</a>
     </div>
   </section>
 </Layout>
